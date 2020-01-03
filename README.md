@@ -10,3 +10,7 @@ Git 시작을 위한 정리
 ### Ubuntu 18.04
 * apt-get을 통한 설치 : `sudo apt-get install -y git`
 
+## 사용법
+### CLI(Command Line Interface) 기준 사용법
+* `git init`
+* `git status`
