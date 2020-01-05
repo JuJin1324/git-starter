@@ -8,15 +8,13 @@ Git 시작을 위한 정리
 
 ## 사용법
 ### 최초 설정
-* 사용자 이름 및 이메일 설정
-```bash
-$ git config --global user.name jujin1324
-$ git config --global user.email jujin1324@daum.net
-```
-* 확인
-```bash
-$ git config --list
-```
+* 사용자 이름 
+ - 용법 : `git config --global user.name [사용자 이름]`
+ - 예시 : `git config --global user.name jujin1324`
+* 이메일 설정
+ - 용법 : `git config --global user.email [이메일]`
+ - 예시 : `git config --global user.email jujin1324@daum.net`
+* 확인 : `git config --list`
 
 ### 저장소 지정부터 커밋까지
 * `git init` : git을 사용하여 버전관리할 저장소 지정
