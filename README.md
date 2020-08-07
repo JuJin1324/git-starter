@@ -32,7 +32,9 @@ $ vi .gitignore
 ```
 
 ### 브랜치 사용
-* `git branch` : 브랜치 보기 / git branch [브랜치명] : 지정한 브랜치 이름으로 브랜치가 새로 만들어짐  
+* `git branch` : 브랜치 보기
+* `git branch [브랜치명]` : 지정한 브랜치 이름으로 브랜치가 새로 만들어짐  
+* `git branch -d [브랜치명]`: 지정한 브랜치 삭제
 * `git checkout [브랜치명]` : 현재 작업 브랜치를 해당 브랜치로 변경(단, 변경 전에 해당 브랜치에서 발생한 변경점들은 커밋이 되어야함)  
 * `git checkout -b [브랜치명]` : 브랜치를 만듬과 동시에 현재 작업 브랜치로 변경  
 * `git checkout master` : 마스터 브랜치로 변경 후에 git merge hotfix 로 hotfix와 병합  
