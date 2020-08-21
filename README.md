@@ -70,3 +70,6 @@ git remote add origin https://github.com/JuJin1324/Git-Command.git
 ### 원격저장소 커밋 되돌리기
 * 로컬 커밋 간소화 확인 - `$ git log --pretty=oneline --abbrev-commit`
 * [참조 링크](https://jupiny.com/2019/03/19/revert-commits-in-remote-repository/)
+
+### 추천 Extension
+* Octotree: github chrome extension, 다운로드 링크: [chrome 웹 스토어](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc/related?hl=ko)
