@@ -17,15 +17,15 @@ Git 시작을 위한 정리
 > 확인 : `git config --list`  
 
 ### 저장소 지정부터 커밋까지
-* `git init` : git을 사용하여 버전관리할 저장소 지정  
-* `git status` : 현재 브랜치 상태 확인  
-* `git add [파일명]` : commit 할 파일 지정  
-* `git commit` : 커밋  
-  * `git commit -a` : git의 모든 파일을 커밋함  
-  * `git commit -a -m “커밋 메시지”` : 모든 내용을 커밋하고 커밋 메시지를 남김 i를 누르고 맨 위에 커밋 메시지 작성 후, :wq로 나감  
-* `git log` : 커밋 기록 확인  
-
-* add 하지 않을 파일 목록 생성
+> * `git init` : git을 사용하여 버전관리할 저장소 지정  
+> * `git status` : 현재 브랜치 상태 확인  
+> * `git add [파일명]` : commit 할 파일 지정  
+> * `git commit` : 커밋  
+>  * `git commit -a` : git의 모든 파일을 커밋함  
+>  * `git commit -a -m “커밋 메시지”` : 모든 내용을 커밋하고 커밋 메시지를 남김 i를 누르고 맨 위에 커밋 메시지 작성 후, :wq로 나감  
+> * `git log` : 커밋 기록 확인  
+>  
+> * add 하지 않을 파일 목록 생성
 > ```bash
 > $ touch .gitignore
 > 혹은
