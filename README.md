@@ -1,10 +1,10 @@
 # Git-Starter
-Git 시작을 위한 정리
+> Git 시작을 위한 정리
 
 ## git 설치
-* macOS : `brew install git`
-* Windows 10 : `scoop install git`
-* Ubuntu 18.04 : `sudo apt-get install -y git`
+> * macOS : `brew install git`
+> * Windows 10 : `scoop install git`
+> * Ubuntu 18.04 : `sudo apt-get install -y git`
 
 ## 사용법
 ### 최초 설정
