@@ -34,6 +34,11 @@ Git 시작을 위한 정리
 > $ vi .gitignore   
 > ```
 
+### checkout 명령어
+> checkout 명령어는 Git 에서 오래 전부터 지원하던 명령어인데, 너무 많은 기능을 포함하고 있다. 그래서 최근에는 checkout 명령어의 주요 기능이 `switch` 명령어와
+> `restore` 명령어로 나누어졌다.  
+> checkout 명령어처럼 커밋 아이디를 지정해서 되돌아가는 명령어는 다소 위험하므로 실무에서는 잘 사용하지 않는다.
+
 ### add 취소하기
 > `git reset HEAD`  
 > 참조사이트: [[Git] git add 취소하기, git commit 취소하기, git push 취소하기](https://gmlwjd9405.github.io/2018/05/25/git-add-cancle.html)
@@ -45,6 +50,8 @@ Git 시작을 위한 정리
 > * `git checkout [브랜치명]` : 현재 작업 브랜치를 해당 브랜치로 변경(단, 변경 전에 해당 브랜치에서 발생한 변경점들은 커밋이 되어야함)   
 > * `git checkout -b [브랜치명]` : 브랜치를 만듬과 동시에 현재 작업 브랜치로 변경  
 > * `git checkout master` : 마스터 브랜치로 변경 후에 git merge hotfix 로 hotfix와 병합 충돌이 일어난 경우 hello.c로 들어가서 파일을 수정하면 된다.   
+> * `git branch -m [브랜치명]`: 현재 브랜치명을 입력한 브랜치명으로 변경한다.  
+> * `git branch -m [브랜치명1] [브랜치명2]`: 브랜치명1을 브랜치명2로 변경한다.  
 
 ---
 
