@@ -90,8 +90,7 @@ Git 시작을 위한 정리
 
 ### 스태시(Stash)
 > 파일 변경이 발생했을 때 다른 브랜치로 이동하고 싶은 경우에 변경한 파일을 커밋하고 브랜치를 이동하거나 아직 변경 중이라서 커밋하기 싫은 경우 
-> 스태시로 변경 파일을 임시 저장 후 브랜치를 이동할 수 있다.  
-> 
+> 스태시로 변경 파일을 임시 저장 후 브랜치를 이동할 수 있다.
 
 ---
 
@@ -128,3 +127,80 @@ Git 시작을 위한 정리
 
 ### 추천 Extension
 > Octotree: github chrome extension, 다운로드 링크: [chrome 웹 스토어](https://chrome.google.com/webstore/detail/octotree/bkhaagjahfmjljalopjnoealnfndnagc/related?hl=ko)
+
+### Conventional Commits
+> Conventional Commits 스펙은 커밋 메시지에 곁들여진 가벼운 컨벤션으로 명확한 커밋 히스토리를 생성하기 위한 간단한 규칙을 제공한다. 
+> 이렇게 만들어진 커밋 히스토리를 이용하여 더 쉽게 자동화된 도구를 만들 수 있다.
+> 
+> Conventional Commit 의 메시지 구조
+> ```
+> <타입>[적용 범위(선택 사항)]: <설명>
+> 
+> [본문(선택 사항)]
+> 
+> [꼬리말(선택 사항)]
+> ```
+> 
+> 타입의 종류
+> * feat: features (기능 개발 관련, `MINOR` 버전 변경)
+> * docs: documentations (문서화 작업)
+> * conf: configurations (환경설정 관련)
+> * test: test (test 관련)
+> * fix: bug-fix (오류 개선 혹은 버그 패치, `PATCH` 버전 변경)
+> * refactor: refactoring
+> * ci: Continuous Integration
+> * build: Build (빌드 관련)
+> * perf: Performance
+> * improvement: 새로운 기능이나 버그 수정 없이 현재 구현체를 개선하는 커밋
+> * chore: 그 외 실제 코드에는 영향이 없는 단순 수정
+> 
+> 본문 내용
+> * BREAKING-CHANGE: `BREAKING-CHANGE` 이라는 꼬리말을 가지거나 타입/스코프 뒤에 !문자열을 붙인 커밋은 단절적 API 변경(breaking API change)
+> 있다는 것을 의미합니다 (이는 유의적 버전에서의 `MAJOR` 와 관련이 있습니다). 어떤 커밋 타입이라도 BREAKING CHANGE 는 해당 커밋의 일부가 될 수 있습니다.
+> * Closes: 지라와 같은 프로젝트 관리 툴에서 일감 적용을 완료했을 때 사용.
+> 
+> commit 할 때 기억해야할 것
+> * commit 은 동작 가능한 최소단위로 자주 할 것.
+> * 해당 작업단위에 수행된 모든 파일 변화가 해당 commit에 포함되어야 함.
+> * 모두가 이해할 수 있는 log를 작성할 것.
+> * Open Source Contribution시 영어가 강제되지만, 그렇지 않을 경우 팀 내 사용 언어를 따라 쓸 것.
+> * 제목은 축약하여 쓰되(50자 이내), 내용은 문장형으로 작성하여 추가설명 할 것.
+> * 제목과 내용은 한 줄 띄워 분리할 것.
+> * 내용은 이 commit의 구성과 의도를 충실히 작성할 것.
+> 
+> 예제
+> 본문에 설명과 BREAKING CHANGE 를 가지는 커밋 메시지
+> ```
+> chore!: drop Node 6 from testing matrix
+> 
+> BREAKING CHANGE: dropping Node 6 which hits end of life in April
+> ```
+> 본문이 없는 커밋 메시지
+> ```
+> docs: correct spelling of CHANGELOG
+> ```
+> 적용 범위를 가지는 커밋 메시지
+> ```
+> feat(lang): add polish language
+> ```
+> 옵션이 이슈 번호를 가진 fix 타입의 커밋 메시지
+> ```
+> fix: correct minor typos in code
+> 
+> see the issue for details on the typos fixed
+> 
+> closes issue #12
+> ```
+> 커밋 컨벤션 예제
+> ```
+> feat: Create server.py to start flask project
+> docs: Create README.md
+> conf: poetry init
+> test: User model CRUD test complete
+> ```
+> 
+> **참조사이트**  
+> [Conventional Commits에 관하여](https://velog.io/@hustle-dev/Conventional-Commits에-관하여)
+> [Conventional Commits](https://www.conventionalcommits.org/ko/v1.0.0/)
+
+---
