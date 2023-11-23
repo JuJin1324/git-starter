@@ -68,6 +68,18 @@ Git 시작을 위한 정리
 > **출처**
 > [나만의 기록들:티스토리](https://mine-it-record.tistory.com/650)
 
+### 리베이스(Rebase)
+> 다음과 같이 feature 브랜치는 main 브랜치의 m1 커밋을 기반으로 작업했는데 f2 까지의 커밋을 main 브랜치로 병합하려는 경우.
+> ```
+> m1 -> m2 -> m3(main)  
+>    -> f1 -> f2(feature)  
+> ```
+> feature 브랜치를 main 브랜치에 리베이스하면 다음과 같은 상태로 변한다.
+> ```
+> m1 -> m2 -> m3(main) -> f1 -> f2(feature)
+> ```
+> 그럼 이 상태로 PR 을 보내면 된다.
+
 ### 리셋(Reset)
 > 현재 브랜치를 원하는 커밋으로 되돌리는 기능이다.   
 > **Hard**  
@@ -202,5 +214,27 @@ Git 시작을 위한 정리
 > **참조사이트**  
 > [Conventional Commits에 관하여](https://velog.io/@hustle-dev/Conventional-Commits에-관하여)
 > [Conventional Commits](https://www.conventionalcommits.org/ko/v1.0.0/)
+
+### 풀 리퀘스트를 병합하는 세 가지 방법
+> 1.병합 커밋 생성(Create a merge commit): 가장 기본 방법이다. 두 브랜치 상태를 비교해서 새로운 커밋을 만들면서 코드를 병합한다.
+> 
+> 2.스쿼시해서 병합(Squash and merge): PR 의 커밋들을 하나로 퉁쳐버린 후 브랜치의 최신 커밋과 합친다.  
+> PR 에 커밋을 아무리 많이 올렸어도 main 브랜치의 커밋 히스토리에는 PR 마다 커밋 1개만 남는다는 장점이 있다. 병합 커밋 생성과는 달리
+> 새로 생긴 커밋이 main 브랜치의 최신 커밋만 부모로 가리킨다. 이로 인해 main 브랜치의 히스토리가 한 줄로 깔끔하게 남는다.  
+> 
+> 3.리베이스해서 병합(Rebase and merge): 위에서 했던 리베이스 설명과 같다.  
+
+### 브랜치 보호하기
+> GitHub 의 Repository 에 Settings 탭을 클릭하고 왼쪽 메뉴에서 Branches 를 클릭하여 브랜치 설정 페이지로 이동한다.  
+> Branch protection rules 항목의 Add branch protection rule 버튼을 클릭한다.  
+> 
+> Branch name pattern 항목에 지정할 브랜치 이름을 입력한다. 브랜치 이름을 입력할 때는 와일드카드(*)를 활용할 수도 있다.  
+> ex) feature/ 로 시작하는 모든 브랜치: `feature/*`  
+> 다음으로 Protect matching branches 항목에 Require a pull request before merging 과 Require approvals 옵션에 체크한다.  
+> 보통 이 두 옵션을 함께 사용해서 리뷰를 강제하고 브랜치를 보호한다. 이렇게 하면 지정된 브랜치에는 반드시 다른 브랜치 커밋들의 PR 을 통해서만
+> 커밋이 생성된다.  
+> 
+> Require approvals 옵션은 지정된 숫자만큼의 리뷰어 승인이 있어야만 PR 을 병합할 수 있게 하는 옵션이다.  
+> 관리자에게도 규칙이 강제로 적용되게하려면 Do not allow bypass the above settings 옵션도 체크한다.
 
 ---
