@@ -472,3 +472,47 @@ Git 시작을 위한 정리
 > [Git 브랜치 전략 (feat. Git Flow, Github Flow)](https://hudi.blog/git-branch-strategy/)  
 > [[설계] Git Branch 전략이란? & Git Branch 전략 알아보기 (Git Flow, GitHub Flow)](https://ksh-coding.tistory.com/109)  
 > [[적용기] Branch 전략 적용 후기(Git Flow, Github Flow)](https://sjevie.tistory.com/entry/%EC%A0%81%EC%9A%A9%EA%B8%B0-%EC%84%9C%EB%A1%9C-%EB%8B%A4%EB%A5%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-%EB%8B%A4%EB%A5%B8-Branch-%EC%A0%84%EB%9E%B5-%EC%A0%81%EC%9A%A9-%ED%9B%84%EA%B8%B0Git-Flow-Github-Flow)
+
+---
+
+## 인증
+### GitHub 인증 제거
+> **macOS**  
+> 터미널을 오픈한 후 다음 명령어를 차례로 입력한다.
+> ```shell
+> git credential-osxkeychain erase return (엔터)
+> host=github.com return (엔터)
+> protocol=https (엔터)
+> ```
+> `키체인 접근` 앱 실행 > 키체인 접근 열기 버튼 클릭 > iCloud 탭에서 `github.com` 문구로 찾기 > github.com 목록들 제거     
+> 
+> **Windows**  
+> 1.제어판 > 사용자 계정 > 자격 증명 관리자 로 이동  
+> 2.일반 자격 증명 목록에서 github.com 을 찾아서 제거  
+> 
+> **제거 확인: 공통**  
+> Github 을 사용하는 프로젝트로 들어가서 `git push` 명령어 입력해서 Github 로그인 창이 나타나면 성공.  
+> 
+> **Jetbrains IDE**  
+> 1.Settings > Version Control -> GitHub 메뉴로 이동  
+> 2.계정 제거
+
+### 인증 Cache / Store 설정
+> Cache 의 경우 외부 저장소의 인증 설정을 일정 시간 동안만 저장해두는 설정이다.  
+> 명령어 예시: 30초간 아이디 및 패스워드 저장
+> ```shell
+> git config credential.helper "cache --timeout=30"  
+> ```
+> 
+> Store 의 경우 외부 저장소의 인증 설정을 영구적으로 저장해두는 설정이다.  
+> 명령어 예시
+> ```shell
+> git config credential.helper store
+> ```
+> 다만 store 옵션에는 한 가지 문제점이 있는데 사용자의 아이디와 패스워드가 홈 디렉터리의 `.git-credentials` 파일에 저장된다는 것이다.  
+> 따라서 패스워드의 노출이 꺼려진다면 store 옵션은 사용하지 않는 것이 좋다.  
+> 
+> store 옵션을 더 이상 사용하지 않을 때에는 잊지말고 인증 정보가 담긴 .git-credentials 파일을 삭제한다.  
+> ```shell
+> rm ~/.git-credentials
+> ```
