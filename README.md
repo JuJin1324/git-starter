@@ -6,11 +6,11 @@
 > 클라이언트의 OpenSSH 와 사내 GitLab 간의 SSH 서명 알고리즘이 일치하지 않아서 사내에서는 GitLab 과의 연결에서 
 > Putty 로 만든 개인키를 이용하도록 권장하고 있다.
 > 
-> 하지만 OpenSSH 를 사용해야하는 경우(ex 맥을 사용하는 경우 혹은 zsh 를 사용하는 경우) .zshrc 에 다음을 추가한다.
+> 다음 명령어를 통해서 git 설정 등록한다.  
 > ```shell
-> export GIT_SSH_COMMAND="ssh -o PubkeyAcceptedAlgorithms=+ssh-rsa -o HostkeyAlgorithms=+ssh-rsa"
+> git config --global core.sshCommand "ssh -o PubkeyAcceptedAlgorithms=+ssh-rsa -o HostkeyAlgorithms=+ssh-rsa"
 > ```
-> 중요한 것은 git clone 을 시도할 해당 터미널 세션에서 source ~/.zshrc 를 꼭 해주어야 동작한다.
+> 해당 명령으로 git 설정을 등록해야 인텔리제이 및 터미널 모두에 적용할 수 있다.
 
 ### 추가: SSH 를 이용한 git clone 디버깅 하기
 > 다음 명령어를 통해서 git clone 을 실행한다.
